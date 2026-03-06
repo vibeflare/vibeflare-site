@@ -1,0 +1,167 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  ogImage?: string;
+}
+
+const {
+  title,
+  description = "Full-service DevSecOps for vibe-coded applications. Security audits, managed infrastructure, and operational guardrails for builders on Lovable, Replit, Cursor, and Bolt.",
+  ogImage = "/og-default.png",
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon (replace with your own) -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <style>
+      @import "../styles/global.css";
+    </style>
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <!-- Nav -->
+    <nav class="fixed top-0 z-50 w-full border-b border-vf-border/50 bg-vf-black/80 backdrop-blur-lg">
+      <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <a href="/" class="flex items-center gap-2 group">
+          <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-vf-accent text-white text-sm font-bold font-mono">VF</span>
+          <span class="text-lg font-semibold tracking-tight text-vf-white font-[family-name:var(--font-display)]">
+            VibeFlare<span class="text-vf-accent">.ai</span>
+          </span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm">
+          <a href="/#problem" class="text-vf-muted hover:text-vf-white transition-colors">The Problem</a>
+          <div class="relative group">
+            <a href="/#services" class="text-vf-muted hover:text-vf-white transition-colors">Services</a>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-3 hidden group-hover:block">
+              <div class="rounded-lg border border-vf-border bg-vf-dark/95 backdrop-blur-lg shadow-xl p-2 min-w-[200px]">
+                <a href="/services/readiness-review" class="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-vf-muted hover:text-vf-white hover:bg-vf-panel transition-colors">
+                  <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-amber flex-shrink-0"></span>
+                  Vibe Readiness Review
+                </a>
+              </div>
+            </div>
+          </div>
+          <a href="/blog" class="text-vf-muted hover:text-vf-white transition-colors">Blog</a>
+          <a
+            href="/#contact"
+            class="inline-flex items-center gap-2 rounded-lg bg-vf-accent px-4 py-2 text-sm font-medium text-white hover:bg-vf-accent-light transition-colors"
+          >
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-teal animate-pulse-slow"></span>
+            Contact Us
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-vf-muted hover:text-vf-white" aria-label="Menu">
+          <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden md:hidden border-t border-vf-border/50 bg-vf-black/95 backdrop-blur-lg">
+        <div class="flex flex-col gap-1 px-6 py-4">
+          <a href="/#problem" class="py-2 text-sm text-vf-muted hover:text-vf-white">The Problem</a>
+          <a href="/#services" class="py-2 text-sm text-vf-muted hover:text-vf-white">Services</a>
+          <a href="/services/readiness-review" class="py-2 pl-5 text-sm text-vf-muted hover:text-vf-white flex items-center gap-2">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-amber flex-shrink-0"></span>
+            Vibe Readiness Review
+          </a>
+          <a href="/blog" class="py-2 text-sm text-vf-muted hover:text-vf-white">Blog</a>
+          <a href="/#contact" class="mt-2 inline-flex items-center justify-center gap-2 rounded-lg bg-vf-accent px-4 py-2 text-sm font-medium text-white">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="flex-1 pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-vf-border/50 bg-vf-dark">
+      <div class="mx-auto max-w-6xl px-6 py-12">
+        <div class="flex flex-col md:flex-row items-start justify-between gap-8">
+          <div>
+            <a href="/" class="flex items-center gap-2">
+              <span class="inline-flex h-7 w-7 items-center justify-center rounded-md bg-vf-accent text-white text-xs font-bold font-mono">VF</span>
+              <span class="text-base font-semibold text-vf-white font-[family-name:var(--font-display)]">
+                VibeFlare<span class="text-vf-accent">.ai</span>
+              </span>
+            </a>
+            <p class="mt-3 max-w-xs text-sm text-vf-muted">
+              The missing ops layer for vibe-coded applications. Security, infrastructure, and operational backbone.
+            </p>
+          </div>
+
+          <div class="flex gap-16 text-sm">
+            <div class="flex flex-col gap-3">
+              <span class="font-medium text-vf-white">Product</span>
+              <a href="/#services" class="text-vf-muted hover:text-vf-white transition-colors">Services</a>
+              <a href="/#contact" class="text-vf-muted hover:text-vf-white transition-colors">Contact Us</a>
+            </div>
+            <div class="flex flex-col gap-3">
+              <span class="font-medium text-vf-white">Resources</span>
+              <a href="/blog" class="text-vf-muted hover:text-vf-white transition-colors">Blog</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-10 border-t border-vf-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p class="text-xs text-vf-muted">&copy; {new Date().getFullYear()} VibeFlare. All rights reserved.</p>
+          <p class="text-xs text-vf-muted font-mono">
+            <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-teal mr-1"></span>
+            All systems operational
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+    </script>
+  </body>
+</html>

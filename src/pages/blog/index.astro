@@ -1,0 +1,54 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Base title="Blog — VibeFlare" description="Security insights, vibe coding best practices, and DevSecOps for AI-built applications.">
+  <section class="mx-auto max-w-4xl px-6 py-16 md:py-24">
+    <div class="mb-14">
+      <p class="text-sm font-mono text-vf-accent uppercase tracking-widest mb-3">Blog</p>
+      <h1 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+        Security for the vibe coding era
+      </h1>
+      <p class="mt-4 text-vf-muted text-lg leading-relaxed max-w-2xl">
+        Research, guides, and analysis on securing AI-generated applications.
+      </p>
+    </div>
+
+    {posts.length === 0 ? (
+      <div class="rounded-xl border border-vf-border bg-vf-panel p-10 text-center">
+        <p class="text-vf-muted">Posts coming soon. Join the waitlist to get notified.</p>
+        <a href="/#waitlist" class="mt-4 inline-flex items-center gap-2 rounded-lg bg-vf-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-vf-accent-light transition-colors">
+          Get Early Access
+        </a>
+      </div>
+    ) : (
+      <div class="flex flex-col gap-6">
+        {posts.map((post) => (
+          <a href={`/blog/${post.id.replace(/\.md$/, "")}`} class="group rounded-xl border border-vf-border bg-vf-panel/50 p-6 md:p-8 hover:border-vf-accent/40 transition-colors">
+            <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-vf-muted mb-3">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              </time>
+              {post.data.tags.length > 0 && (
+                <span class="text-vf-border">·</span>
+              )}
+              {post.data.tags.map((tag) => (
+                <span class="rounded-full border border-vf-border px-2 py-0.5">{tag}</span>
+              ))}
+            </div>
+            <h2 class="text-xl md:text-2xl font-semibold tracking-tight font-[family-name:var(--font-display)] text-vf-white group-hover:text-vf-accent-light transition-colors">
+              {post.data.title}
+            </h2>
+            <p class="mt-2 text-sm text-vf-muted leading-relaxed line-clamp-2">
+              {post.data.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    )}
+  </section>
+</Base>

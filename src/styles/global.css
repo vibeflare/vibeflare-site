@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  /* VibeFlare palette — aligned to Brand Guide v1.0 */
+  /* Foundation */
+  --color-vf-black: #0A0F1E;
+  --color-vf-dark: #1A2235;
+  --color-vf-panel: #1A2235;
+  --color-vf-border: #334155;
+  --color-vf-muted: #94A3B8;
+  --color-vf-text: #F1F5F9;
+  --color-vf-white: #FFFFFF;
+
+  /* Brand accent — Violet */
+  --color-vf-accent: #7C3AED;
+  --color-vf-accent-light: #8B5CF6;
+  --color-vf-accent-soft: #A78BFA;
+
+  /* Signal: secure / active */
+  --color-vf-teal: #14B8A6;
+
+  /* Signal: warning */
+  --color-vf-amber: #F59E0B;
+
+  /* Signal: critical / CTA */
+  --color-vf-pink: #EC4899;
+
+  /* Terminal red (error states only) */
+  --color-vf-red: #EF4444;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+  --font-display: "Space Grotesk", var(--font-sans);
+}
+
+/* ---- Base resets ---- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-vf-black);
+  color: var(--color-vf-text);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--color-vf-accent);
+  color: white;
+}
+
+/* ---- Utility classes ---- */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-vf-white) 0%, var(--color-vf-accent-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-teal {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.15), 0 0 60px rgba(20, 184, 166, 0.05);
+}
+
+.glow-accent {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.2), 0 0 60px rgba(124, 58, 237, 0.05);
+}
+
+.scan-line {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(124, 58, 237, 0.03) 2px,
+    rgba(124, 58, 237, 0.03) 4px
+  );
+}
+
+/* ---- Animations ---- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.6s ease-out 0.1s both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.6s ease-out 0.2s both;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.6s ease-out 0.3s both;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}

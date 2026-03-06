@@ -1,0 +1,347 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="VibeFlare.ai — Security for Vibe-Built Apps">
+
+  <!-- ============ HERO ============ -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 scan-line pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full bg-vf-accent/5 blur-[120px] pointer-events-none"></div>
+
+    <div class="relative mx-auto max-w-4xl px-6 pt-24 pb-20 md:pt-32 md:pb-28 text-center">
+      <!-- Status badge -->
+      <div class="animate-fade-up inline-flex items-center gap-2 rounded-full border border-vf-border bg-vf-panel/50 px-4 py-1.5 text-xs font-mono text-vf-muted mb-8">
+        <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-amber animate-pulse-slow"></span>
+        45% of AI-generated code fails OWASP security tests
+      </div>
+
+      <h1 class="animate-fade-up-delay-1 text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08] font-[family-name:var(--font-display)]">
+        You vibe.<br />
+        <span class="gradient-text">We harden.</span>
+      </h1>
+
+      <p class="animate-fade-up-delay-2 mt-6 max-w-2xl mx-auto text-lg md:text-xl text-vf-muted leading-relaxed">
+        Your AI built the app. We handle everything it left out — security holes, live monitoring, and safe deployments. For builders on Lovable, Replit, Cursor, and Bolt.
+      </p>
+
+      <div class="animate-fade-up-delay-3 mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#contact"
+          class="inline-flex items-center gap-2 rounded-lg bg-vf-accent px-6 py-3 text-base font-medium text-white hover:bg-vf-accent-light transition-colors glow-accent"
+        >
+          <span class="inline-block h-1.5 w-1.5 rounded-full bg-vf-teal animate-pulse-slow"></span>
+          Contact Us
+        </a>
+        <a href="#problem" class="inline-flex items-center gap-2 rounded-lg border border-vf-border px-6 py-3 text-base font-medium text-vf-text hover:border-vf-muted transition-colors">
+          See the Data
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section id="problem" class="border-t border-vf-border/50 bg-vf-dark">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <p class="text-sm font-mono text-vf-pink uppercase tracking-widest mb-3">The Problem</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+          Your app shipped. The security didn't.
+        </h2>
+        <p class="mt-4 text-vf-muted text-lg leading-relaxed">
+          Millions of AI-generated apps go live every week carrying the same vulnerabilities. Not because the builders are careless, but because vibecoding tools don't come with a security team, and no one told you what was missing.
+        </p>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <p class="text-3xl md:text-4xl font-bold font-mono text-vf-pink">45%</p>
+          <p class="mt-2 text-sm text-vf-muted">of AI-generated code introduces critical security vulnerabilities</p>
+          <p class="mt-3 text-xs font-mono text-vf-border">Veracode 2025</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <p class="text-3xl md:text-4xl font-bold font-mono text-vf-amber">2,000+</p>
+          <p class="mt-2 text-sm text-vf-muted">vulnerabilities found in 5,600 scanned vibe-coded apps</p>
+          <p class="mt-3 text-xs font-mono text-vf-border">Escape.tech</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <p class="text-3xl md:text-4xl font-bold font-mono text-vf-amber">400+</p>
+          <p class="mt-2 text-sm text-vf-muted">API keys and passwords accidentally published in live app code</p>
+          <p class="mt-3 text-xs font-mono text-vf-border">Escape.tech</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <p class="text-3xl md:text-4xl font-bold font-mono text-vf-accent">$0</p>
+          <p class="mt-2 text-sm text-vf-muted">security spend by most vibe-coded startups — until something breaks</p>
+          <p class="mt-3 text-xs font-mono text-vf-border">VibeFlare.ai</p>
+        </div>
+      </div>
+
+      <!-- What's actually going wrong -->
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rounded-xl border border-vf-border bg-vf-panel/50 p-5">
+          <p class="text-sm font-semibold text-vf-text mb-1">Passwords and keys left in plain sight</p>
+          <p class="text-xs text-vf-muted">Database credentials baked into the app. Anyone who looks at the source code can find them.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel/50 p-5">
+          <p class="text-sm font-semibold text-vf-text mb-1">No protection against abuse</p>
+          <p class="text-xs text-vf-muted">Login pages and APIs wide open. No filters on automated attacks or credential stuffing.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel/50 p-5">
+          <p class="text-sm font-semibold text-vf-text mb-1">No way to undo a bad deploy</p>
+          <p class="text-xs text-vf-muted">No version history. No safe deployment setup. One bad push can take the whole app down.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel/50 p-5">
+          <p class="text-sm font-semibold text-vf-text mb-1">Failures are invisible until users complain</p>
+          <p class="text-xs text-vf-muted">No uptime checks. No error tracking. You find out your app is down when someone tweets about it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="border-t border-vf-border/50">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <p class="text-sm font-mono text-vf-accent uppercase tracking-widest mb-3">What We Do</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+          The security and operations side your app is missing.
+        </h2>
+        <p class="mt-4 text-vf-muted text-lg leading-relaxed">
+          Not another scanning tool. VibeFlare is a hands-on service — we do the work so you don't have to hire a security engineer or figure it out yourself.
+        </p>
+      </div>
+
+      <div class="mt-14 flex flex-col gap-4">
+        <!-- Vibe Readiness Review -->
+        <div class="group rounded-xl border border-vf-border bg-vf-panel p-6 md:p-8 hover:border-vf-accent/40 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-full border border-vf-amber/40 text-vf-amber font-mono font-bold text-sm">
+                01
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold font-[family-name:var(--font-display)]">Vibe Readiness Review</h3>
+                <p class="mt-2 text-sm text-vf-muted leading-relaxed max-w-xl">
+                  One-time security audit of your app before (or right after) it goes live. We check who can access what, whether your database rules actually work, whether any passwords or keys are exposed, and whether your auth can be bypassed. You get a clear ship&nbsp;/&nbsp;don't&nbsp;ship verdict with prioritized fixes.
+                </p>
+                <a href="/services/readiness-review" class="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-vf-accent hover:text-vf-accent-light transition-colors">
+                  See full details &rarr;
+                </a>
+              </div>
+            </div>
+            <span class="flex-shrink-0 inline-flex items-center rounded-full border border-vf-amber/40 px-3 py-1 text-xs font-mono text-vf-amber">
+              $300
+            </span>
+          </div>
+        </div>
+
+        <!-- Managed Edge & Security -->
+        <div class="group rounded-xl border border-vf-border bg-vf-panel p-6 md:p-8 hover:border-vf-accent/40 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-full border border-vf-accent/40 text-vf-accent font-mono font-bold text-sm">
+                02
+              </div>
+              <div>
+                <div class="flex items-center gap-3 mb-2">
+                  <h3 class="text-lg font-semibold font-[family-name:var(--font-display)]">Managed Security</h3>
+                  <span class="inline-flex items-center rounded-full border border-vf-teal/40 bg-vf-teal/10 px-2.5 py-0.5 text-xs font-mono text-vf-teal">Coming Soon</span>
+                </div>
+                <p class="mt-2 text-sm text-vf-muted leading-relaxed max-w-xl">
+                  Ongoing managed service. We set up and maintain attack filtering, abuse protection, credential security, and uptime monitoring. Your app stays protected without you having to think about it — and without hiring a security engineer.
+                </p>
+              </div>
+            </div>
+            <span class="flex-shrink-0 inline-flex items-center rounded-full border border-vf-muted/20 px-3 py-1 text-xs font-mono text-vf-muted">
+              Notify me
+            </span>
+          </div>
+        </div>
+
+        <!-- Operational Guardrails -->
+        <div class="group rounded-xl border border-vf-border bg-vf-panel p-6 md:p-8 hover:border-vf-accent/40 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-full border border-vf-teal/40 text-vf-teal font-mono font-bold text-sm">
+                03
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold font-[family-name:var(--font-display)]">Safe Deployment Setup</h3>
+                <p class="mt-2 text-sm text-vf-muted leading-relaxed max-w-xl">
+                  Version control, rollback capability, a protected production environment, and a clear playbook for when something breaks. The setup that keeps a bad deploy from becoming a crisis.
+                </p>
+              </div>
+            </div>
+            <span class="flex-shrink-0 inline-flex items-center rounded-full border border-vf-teal/40 px-3 py-1 text-xs font-mono text-vf-teal">
+              Add-on
+            </span>
+          </div>
+        </div>
+
+        <!-- Graduation & Migration -->
+        <div class="group rounded-xl border border-vf-border bg-vf-panel p-6 md:p-8 hover:border-vf-accent/40 transition-colors">
+          <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-full border border-vf-pink/40 text-vf-pink font-mono font-bold text-sm">
+                04
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold font-[family-name:var(--font-display)]">Graduation &amp; Migration</h3>
+                <p class="mt-2 text-sm text-vf-muted leading-relaxed max-w-xl">
+                  When your Lovable or Replit app outgrows its platform, we manage the move to AWS, Azure, or GCP. Cost analysis, infrastructure planning, and a managed handoff — so you scale up without losing momentum or breaking what works.
+                </p>
+              </div>
+            </div>
+            <span class="flex-shrink-0 inline-flex items-center rounded-full border border-vf-pink/40 px-3 py-1 text-xs font-mono text-vf-pink">
+              Custom
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHO IT'S FOR ============ -->
+  <section class="border-t border-vf-border/50 bg-vf-dark">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="max-w-2xl mb-14">
+        <p class="text-sm font-mono text-vf-teal uppercase tracking-widest mb-3">Who We Serve</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+          You built something real. Now protect it.
+        </h2>
+        <p class="mt-4 text-vf-muted text-lg leading-relaxed">
+          You had an idea. You shipped it with AI. People started using it — and then paying for it. What started as a side project became a real product with real users and real data. At some point, that changes everything.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px border border-vf-border rounded-xl overflow-hidden">
+        <div class="bg-vf-panel p-8">
+          <p class="text-xs font-mono text-vf-accent uppercase tracking-widest mb-4">The build</p>
+          <p class="text-base font-semibold text-vf-text mb-3 font-[family-name:var(--font-display)]">You moved fast, on purpose.</p>
+          <p class="text-sm text-vf-muted leading-relaxed">
+            Lovable, Replit, Cursor, Bolt — you picked tools designed for speed, not overhead. You didn't need a dev team. You needed to find out if the idea worked. It did.
+          </p>
+        </div>
+        <div class="bg-vf-panel p-8 border-t border-vf-border md:border-t-0 md:border-l">
+          <p class="text-xs font-mono text-vf-amber uppercase tracking-widest mb-4">The shift</p>
+          <p class="text-base font-semibold text-vf-text mb-3 font-[family-name:var(--font-display)]">Traction changes the stakes.</p>
+          <p class="text-sm text-vf-muted leading-relaxed">
+            Users trust you with their accounts, their data, their workflows. A security gap that was fine at 10 users is a liability at 1,000. The app that got you here wasn't built to carry this weight.
+          </p>
+        </div>
+        <div class="bg-vf-panel p-8 border-t border-vf-border md:border-t-0 md:border-l">
+          <p class="text-xs font-mono text-vf-teal uppercase tracking-widest mb-4">The fix</p>
+          <p class="text-base font-semibold text-vf-text mb-3 font-[family-name:var(--font-display)]">Harden it without rebuilding it.</p>
+          <p class="text-sm text-vf-muted leading-relaxed">
+            VibeFlare works on top of what you already have. We close the gaps, add the protections, and set you up so the thing you built can actually last — without slowing you down or handing it off to a dev shop.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY VIBEFLARE ============ -->
+  <section class="border-t border-vf-border/50">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <p class="text-sm font-mono text-vf-amber uppercase tracking-widest mb-3">Why VibeFlare</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+          We own the work. Not just the report.
+        </h2>
+        <p class="mt-4 text-vf-muted text-lg leading-relaxed">
+          Security tools tell you what's wrong and leave the rest to you. VibeFlare is a service — we find the problems, fix them, set up the protections, and stay involved after launch.
+        </p>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-teal text-base">&#x2713;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">We fix, not just flag</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">Every audit comes with hands-on remediation. You get a verdict and the work done — not a PDF to decode on your own.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-teal text-base">&#x2713;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">Built for how vibe coders actually build</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">We know Lovable, Replit, Cursor, and Supabase. We know exactly where AI-generated apps break down in production — because we've seen it.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-teal text-base">&#x2713;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">Protection that stays on after launch</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">Most security work happens before deployment and stops there. VibeFlare keeps watching — uptime, abuse patterns, and the new risks that come with growth.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-teal text-base">&#x2713;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">No security background required</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">We explain everything in plain language. You'll always know what we found, why it matters, and what we did about it — without needing to Google the terminology.</p>
+        </div>
+        <div class="rounded-xl border border-vf-border bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-teal text-base">&#x2713;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">A path forward as you scale</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">When your app outgrows its platform, we manage the migration. One partner from early-stage hardening through enterprise-ready infrastructure.</p>
+        </div>
+        <div class="rounded-xl border border-vf-accent/20 bg-vf-panel p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-vf-accent text-base">&#x2192;</span>
+            <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">Start with a Readiness Review</p>
+          </div>
+          <p class="text-sm text-vf-muted leading-relaxed">One flat-rate audit. Clear findings. Prioritized fixes. A ship&nbsp;/&nbsp;don't&nbsp;ship verdict you can act on the same week.</p>
+          <a href="#waitlist" class="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-vf-accent hover:text-vf-accent-light transition-colors">
+            Get started <span>&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT CTA ============ -->
+  <section id="contact" class="border-t border-vf-border/50 bg-vf-dark">
+    <div class="relative overflow-hidden">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[600px] rounded-full bg-vf-accent/5 blur-[100px] pointer-events-none"></div>
+
+      <div class="relative mx-auto max-w-2xl px-6 py-20 md:py-28 text-center">
+        <p class="text-sm font-mono text-vf-teal uppercase tracking-widest mb-4">Get In Touch</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight font-[family-name:var(--font-display)]">
+          You bring the idea.<br />We bring everything else.
+        </h2>
+        <p class="mt-4 text-vf-muted text-lg">
+          We're working with a small group of early builders. If you're shipping with AI and have real users, we want to talk.
+        </p>
+
+        <!-- Simple email form — replace action with your form backend -->
+        <form
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+          class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
+        >
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="you@example.com"
+            class="w-full sm:flex-1 rounded-lg border border-vf-border bg-vf-panel px-4 py-3 text-sm text-vf-white placeholder:text-vf-muted focus:outline-none focus:border-vf-accent transition-colors"
+          />
+          <button
+            type="submit"
+            class="w-full sm:w-auto rounded-lg bg-vf-accent px-6 py-3 text-sm font-medium text-white hover:bg-vf-accent-light transition-colors whitespace-nowrap"
+          >
+            Contact Us
+          </button>
+        </form>
+        <p class="mt-4 text-xs text-vf-muted">No spam. We'll be in touch shortly.</p>
+      </div>
+    </div>
+  </section>
+
+</Base>

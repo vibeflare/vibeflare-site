@@ -1,0 +1,91 @@
+---
+import Base from "./Base.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  author?: string;
+  tags?: string[];
+}
+
+const { title, description, pubDate, updatedDate, author = "VibeFlare Team", tags = [] } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+const formattedUpdate = updatedDate?.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<Base title={`${title} — VibeFlare Blog`} description={description}>
+  <article class="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <!-- Back link -->
+    <a href="/blog" class="inline-flex items-center gap-1 text-sm text-vf-muted hover:text-vf-white transition-colors mb-10">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+      All Posts
+    </a>
+
+    <!-- Header -->
+    <header>
+      <div class="flex flex-wrap items-center gap-3 text-xs font-mono text-vf-muted mb-4">
+        <time datetime={pubDate.toISOString()}>{formattedDate}</time>
+        {updatedDate && <span>· Updated {formattedUpdate}</span>}
+        <span>· {author}</span>
+      </div>
+
+      <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight font-[family-name:var(--font-display)]">
+        {title}
+      </h1>
+
+      <p class="mt-4 text-lg text-vf-muted leading-relaxed">{description}</p>
+
+      {tags.length > 0 && (
+        <div class="mt-5 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="rounded-full border border-vf-border bg-vf-panel px-3 py-1 text-xs font-mono text-vf-muted">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <hr class="my-10 border-vf-border/50" />
+
+    <!-- Post content -->
+    <div class="prose prose-invert prose-vf max-w-none
+      [&>h2]:font-[family-name:var(--font-display)] [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:tracking-tight [&>h2]:mt-12 [&>h2]:mb-4 [&>h2]:text-vf-white
+      [&>h3]:font-[family-name:var(--font-display)] [&>h3]:text-xl [&>h3]:font-semibold [&>h3]:mt-8 [&>h3]:mb-3 [&>h3]:text-vf-white
+      [&>p]:text-vf-text [&>p]:leading-relaxed [&>p]:mb-5
+      [&>ul]:text-vf-text [&>ul]:leading-relaxed [&>ul]:mb-5 [&>ul]:list-disc [&>ul]:pl-6
+      [&>ol]:text-vf-text [&>ol]:leading-relaxed [&>ol]:mb-5 [&>ol]:list-decimal [&>ol]:pl-6
+      [&>blockquote]:border-l-2 [&>blockquote]:border-vf-accent [&>blockquote]:pl-5 [&>blockquote]:italic [&>blockquote]:text-vf-muted
+      [&>pre]:rounded-xl [&>pre]:border [&>pre]:border-vf-border [&>pre]:bg-vf-panel [&>pre]:p-5 [&>pre]:overflow-x-auto [&>pre]:text-sm [&>pre]:font-mono
+      [&>code]:font-mono [&>code]:text-vf-accent-light [&>code]:text-sm
+      [&_a]:text-vf-accent-light [&_a]:underline [&_a]:underline-offset-2 hover:[&_a]:text-vf-accent
+      [&>img]:rounded-xl [&>img]:border [&>img]:border-vf-border
+    ">
+      <slot />
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-16 rounded-xl border border-vf-border bg-vf-panel p-8 text-center">
+      <p class="text-lg font-semibold font-[family-name:var(--font-display)]">Need ops for your vibe-coded app?</p>
+      <p class="mt-2 text-sm text-vf-muted">VibeFlare provides full-service DevSecOps for builders shipping with AI.</p>
+      <a
+        href="/#waitlist"
+        class="mt-5 inline-flex items-center gap-2 rounded-lg bg-vf-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-vf-accent-light transition-colors"
+      >
+        Get Early Access
+      </a>
+    </div>
+  </article>
+</Base>
