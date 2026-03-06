@@ -297,7 +297,7 @@ import Base from "../layouts/Base.astro";
             <p class="text-sm font-semibold text-vf-text font-[family-name:var(--font-display)]">Start with a Readiness Review</p>
           </div>
           <p class="text-sm text-vf-muted leading-relaxed">One flat-rate audit. Clear findings. Prioritized fixes. A ship&nbsp;/&nbsp;don't&nbsp;ship verdict you can act on the same week.</p>
-          <a href="#waitlist" class="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-vf-accent hover:text-vf-accent-light transition-colors">
+          <a href="#contact" class="inline-flex items-center gap-1.5 mt-4 text-xs font-mono text-vf-accent hover:text-vf-accent-light transition-colors">
             Get started <span>&rarr;</span>
           </a>
         </div>
@@ -325,6 +325,7 @@ import Base from "../layouts/Base.astro";
           method="POST"
           class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto"
         >
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <input
             type="email"
             name="email"
