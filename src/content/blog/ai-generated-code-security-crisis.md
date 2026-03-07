@@ -1,7 +1,7 @@
 ---
 title: "Why 45% of AI-Generated Code Fails Security Tests — and What to Do About It"
 description: "Veracode's 2025 research tested 100+ LLMs and found nearly half of AI-generated code introduces OWASP Top 10 vulnerabilities. Here's what vibe coders need to know."
-pubDate: 2025-02-21
+pubDate: 2025-12-01
 author: "VibeFlare Team"
 tags: ["security", "research", "OWASP"]
 ---

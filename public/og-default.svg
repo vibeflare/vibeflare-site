@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=DM+Sans:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+    </style>
+
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#0A0F1E"/>
+      <stop offset="100%" stop-color="#0D1526"/>
+    </linearGradient>
+
+    <!-- Violet radial glow — center left -->
+    <radialGradient id="glowMain" cx="380" cy="315" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0.12"/>
+      <stop offset="55%"  stop-color="#7C3AED" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle top-right glow -->
+    <radialGradient id="glowTR" cx="1050" cy="120" r="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#8B5CF6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Gradient text — "We harden." -->
+    <linearGradient id="gradText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"   stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#A78BFA"/>
+    </linearGradient>
+
+    <!-- Top border accent -->
+    <linearGradient id="topBorder" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%"   stop-color="#7C3AED" stop-opacity="0.9"/>
+      <stop offset="40%"  stop-color="#8B5CF6" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0.05"/>
+    </linearGradient>
+
+    <!-- VF badge gradient -->
+    <linearGradient id="badgeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#6D28D9"/>
+    </linearGradient>
+
+    <!-- Scan-line pattern -->
+    <pattern id="scanlines" x="0" y="0" width="1" height="4" patternUnits="userSpaceOnUse">
+      <rect width="1200" height="2" fill="#7C3AED" opacity="0.018"/>
+    </pattern>
+
+    <clipPath id="bounds">
+      <rect width="1200" height="630"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── BASE ── -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowMain)"/>
+  <rect width="1200" height="630" fill="url(#glowTR)"/>
+
+  <!-- Scanlines texture -->
+  <rect width="1200" height="630" fill="url(#scanlines)" clip-path="url(#bounds)"/>
+
+  <!-- ── BORDERS ── -->
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="1200" height="3" fill="url(#topBorder)"/>
+  <!-- Bottom line -->
+  <rect x="0" y="627" width="1200" height="3" fill="#334155" opacity="0.5"/>
+  <!-- Left edge -->
+  <rect x="0" y="0" width="3" height="630" fill="#7C3AED" opacity="0.4"/>
+
+  <!-- ── VERTICAL DIVIDER ── -->
+  <line x1="700" y1="80" x2="700" y2="550" stroke="#334155" stroke-width="1" opacity="0.7"/>
+
+  <!-- ══════════════════════════════════════════
+       LEFT PANEL
+  ══════════════════════════════════════════ -->
+
+  <!-- VF badge -->
+  <rect x="72" y="130" width="42" height="42" rx="8" fill="url(#badgeBg)"/>
+  <text x="93" y="158"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="16" font-weight="500"
+    fill="white" text-anchor="middle">VF</text>
+
+  <!-- Wordmark -->
+  <text x="124" y="160"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="22" font-weight="600"
+    fill="#F1F5F9" letter-spacing="-0.3">VibeFlare<tspan fill="#7C3AED">.ai</tspan></text>
+
+  <!-- Divider under wordmark row -->
+  <line x1="72" y1="195" x2="660" y2="195" stroke="#334155" stroke-width="1" opacity="0.6"/>
+
+  <!-- Status badge pill -->
+  <rect x="72" y="215" width="308" height="28" rx="14" fill="#1A2235" stroke="#334155" stroke-width="1"/>
+  <circle cx="92" cy="229" r="4" fill="#F59E0B"/>
+  <text x="104" y="234"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="11" fill="#94A3B8" letter-spacing="0.3">45% of AI code fails OWASP tests</text>
+
+  <!-- Main headline line 1 -->
+  <text x="72" y="330"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="88" font-weight="700"
+    fill="#F1F5F9" letter-spacing="-3">You vibe.</text>
+
+  <!-- Main headline line 2 — gradient -->
+  <text x="72" y="428"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="88" font-weight="700"
+    fill="url(#gradText)" letter-spacing="-3">We harden.</text>
+
+  <!-- Tagline -->
+  <text x="72" y="490"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="19" font-weight="400"
+    fill="#94A3B8" letter-spacing="0">Security for builders on Lovable, Replit, Cursor &amp; Bolt.</text>
+
+  <!-- CTA pill -->
+  <rect x="72" y="517" width="152" height="36" rx="8" fill="#7C3AED"/>
+  <circle cx="92" cy="535" r="3.5" fill="#14B8A6"/>
+  <text x="104" y="540"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="14" font-weight="500"
+    fill="white">vibeflare.ai</text>
+
+  <!-- ══════════════════════════════════════════
+       RIGHT PANEL — STATS
+  ══════════════════════════════════════════ -->
+
+  <!-- STAT 1 ── 45% -->
+  <rect x="730" y="115" width="428" height="126" rx="12" fill="#1A2235" stroke="#334155" stroke-width="1"/>
+  <!-- Left accent bar -->
+  <rect x="730" y="115" width="3" height="126" rx="2" fill="#EC4899"/>
+
+  <text x="752" y="148"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="10" font-weight="400" letter-spacing="2.5"
+    fill="#EC4899" opacity="0.8">OWASP FAILURE RATE</text>
+
+  <text x="752" y="205"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="60" font-weight="700"
+    fill="#EC4899">45<tspan font-size="32" fill="#94A3B8">%</tspan></text>
+
+  <text x="955" y="176"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">of AI-generated code has</text>
+  <text x="955" y="192"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">security vulnerabilities</text>
+  <text x="955" y="208"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">— Veracode 2025</text>
+
+  <!-- STAT 2 ── 2,000+ -->
+  <rect x="730" y="257" width="428" height="126" rx="12" fill="#1A2235" stroke="#334155" stroke-width="1"/>
+  <rect x="730" y="257" width="3" height="126" rx="2" fill="#F59E0B"/>
+
+  <text x="752" y="290"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="10" font-weight="400" letter-spacing="2.5"
+    fill="#F59E0B" opacity="0.8">LIVE VULNERABILITIES FOUND</text>
+
+  <text x="752" y="347"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="60" font-weight="700"
+    fill="#F59E0B">2,000<tspan font-size="32" fill="#94A3B8">+</tspan></text>
+
+  <text x="955" y="322"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">in 5,600 scanned</text>
+  <text x="955" y="338"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">vibe-coded apps</text>
+
+  <!-- STAT 3 ── $115k -->
+  <rect x="730" y="399" width="428" height="126" rx="12" fill="#1A2235" stroke="#334155" stroke-width="1"/>
+  <rect x="730" y="399" width="3" height="126" rx="2" fill="#14B8A6"/>
+
+  <text x="752" y="432"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="10" font-weight="400" letter-spacing="2.5"
+    fill="#14B8A6" opacity="0.8">TYPICAL RANSOMWARE PAYMENT</text>
+
+  <text x="752" y="489"
+    font-family="'Space Grotesk', 'Helvetica Neue', Arial, sans-serif"
+    font-size="52" font-weight="700"
+    fill="#14B8A6">$115k</text>
+
+  <text x="955" y="457"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">median ransom paid</text>
+  <text x="955" y="473"
+    font-family="'DM Sans', 'Helvetica Neue', Arial, sans-serif"
+    font-size="12" fill="#94A3B8">by small businesses</text>
+  <text x="955" y="489"
+    font-family="'JetBrains Mono', 'Courier New', monospace"
+    font-size="10" fill="#334155">Verizon DBIR 2025</text>
+
+</svg>
