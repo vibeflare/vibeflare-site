@@ -26,6 +26,26 @@ const formattedUpdate = updatedDate?.toLocaleDateString("en-US", {
 ---
 
 <Base title={`${title} — VibeFlare Blog`} description={description}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": title,
+    "description": description,
+    "datePublished": pubDate.toISOString(),
+    "dateModified": (updatedDate ?? pubDate).toISOString(),
+    "author": {
+      "@type": "Organization",
+      "name": author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "VibeFlare",
+      "url": "https://vibeflare.ai",
+      "logo": "https://vibeflare.ai/og-default.png"
+    },
+    "image": "https://vibeflare.ai/og-default.png"
+  })}></script>
+
   <article class="mx-auto max-w-3xl px-6 py-16 md:py-24">
     <!-- Back link -->
     <a href="/blog" class="inline-flex items-center gap-1 text-sm text-vf-muted hover:text-vf-white transition-colors mb-10">

@@ -2,7 +2,17 @@
 import Base from "../layouts/Base.astro";
 ---
 
-<Base title="VibeFlare.ai — Security for Vibe-Built Apps">
+<Base title="VibeFlare — Vibe Coding Security | Scan, Harden & Monitor AI-Built Apps">
+
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "VibeFlare",
+    "applicationCategory": "SecurityApplication",
+    "description": "Full-service DevSecOps for vibe-coded applications. Security audits, managed infrastructure, and operational guardrails for builders on Lovable, Replit, Cursor, and Bolt.",
+    "url": "https://vibeflare.ai",
+    "operatingSystem": "Web"
+  })}></script>
 
   <!-- ============ HERO ============ -->
   <section class="relative overflow-hidden">

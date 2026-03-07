@@ -6,7 +6,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<Base title="Blog — VibeFlare" description="Security insights, vibe coding best practices, and DevSecOps for AI-built applications.">
+<Base title="Vibe Coding Security Blog — VibeFlare" description="Security insights, vibe coding best practices, and DevSecOps for AI-built applications.">
   <section class="mx-auto max-w-4xl px-6 py-16 md:py-24">
     <div class="mb-14">
       <p class="text-sm font-mono text-vf-accent uppercase tracking-widest mb-3">Blog</p>
